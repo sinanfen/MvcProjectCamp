@@ -1,0 +1,6 @@
+C:\Users\sinan\Desktop\MvcProjeKampi\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\sinan\Desktop\MvcProjeKampi\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\sinan\Desktop\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+C:\Users\sinan\Desktop\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\sinan\Desktop\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\sinan\Desktop\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.pdb

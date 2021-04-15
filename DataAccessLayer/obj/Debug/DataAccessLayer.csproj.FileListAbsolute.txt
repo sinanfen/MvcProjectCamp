@@ -1,0 +1,6 @@
+C:\Users\sinan\Desktop\MvcProjeKampi\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\sinan\Desktop\MvcProjeKampi\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\sinan\Desktop\MvcProjeKampi\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\sinan\Desktop\MvcProjeKampi\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\sinan\Desktop\MvcProjeKampi\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\sinan\Desktop\MvcProjeKampi\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
