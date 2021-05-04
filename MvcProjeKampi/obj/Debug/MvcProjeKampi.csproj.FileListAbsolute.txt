@@ -156,3 +156,16 @@ C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\obj\Debug\
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.csproj.CopyComplete
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.dll
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.pdb
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\BusinessLayer.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\DataAccessLayer.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\EntityLayer.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\EntityFramework.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\BusinessLayer.pdb
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\BusinessLayer.dll.config
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\DataAccessLayer.pdb
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\DataAccessLayer.dll.config
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\EntityLayer.pdb
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\EntityLayer.dll.config
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\EntityFramework.xml
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\EntityFramework.SqlServer.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\EntityFramework.SqlServer.xml
