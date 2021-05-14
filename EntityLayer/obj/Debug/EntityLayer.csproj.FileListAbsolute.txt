@@ -11,7 +11,6 @@ C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\En
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\EntityFramework.xml
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\EntityLayer.csprojAssemblyReference.cache
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\EntityLayer.dll
