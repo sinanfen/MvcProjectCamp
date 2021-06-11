@@ -4,7 +4,6 @@ C:\Users\sinan\Desktop\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.cspro
 C:\Users\sinan\Desktop\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
 C:\Users\sinan\Desktop\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\Users\sinan\Desktop\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.pdb
-C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\BusinessLayer.dll.config
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\BusinessLayer.dll
@@ -24,3 +23,4 @@ C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
