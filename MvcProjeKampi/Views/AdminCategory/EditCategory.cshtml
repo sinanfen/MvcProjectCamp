@@ -10,15 +10,21 @@
 {
     <div class="form-group">
         @Html.Label("Kategori ID")
-        @Html.TextBoxFor(x=>x.CategoryID, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
         <br />
         @Html.Label("Kategori Adı")
-        @Html.TextBoxFor(x=>x.CategoryName, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
         <br />
         @Html.Label("Açıklama")
-        @Html.TextAreaFor(x=>x.CategoryDescription, new { @class = "form-control" })
+        @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
         <br />
         <button class="btn btn-success">Güncelle</button>
     </div>
 }
-
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>

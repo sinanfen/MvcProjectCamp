@@ -20,17 +20,22 @@ namespace BusinessLayer.Concrete
 
         public Message GetById(int id)
         {
-            throw new NotImplementedException();
+            return _messageDal.Get(x => x.MessageId == id);
         }
 
-        public List<Message> GetList()
+        public List<Message> GetListInbox()
         {
             return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com");
         }
 
+        public List<Message> GetListSendbox()
+        {
+            return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
+        }
+
         public void MessageAdd(Message message)
         {
-            throw new NotImplementedException();
+            _messageDal.Insert(message);
         }
 
         public void MessageDelete(Message message)

@@ -77,7 +77,6 @@ C:\Users\sinan\Desktop\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.cspro
 C:\Users\sinan\Desktop\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.csproj.CopyComplete
 C:\Users\sinan\Desktop\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.dll
 C:\Users\sinan\Desktop\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.pdb
-C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.csproj.CoreCompileInputs.cache
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\MvcProjeKampi.dll.config
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\MvcProjeKampi.dll
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\MvcProjeKampi.pdb
@@ -167,7 +166,8 @@ C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\System
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\Newtonsoft.Json.xml
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\Antlr3.Runtime.pdb
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.csproj.AssemblyReference.cache
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.csproj.CoreCompileInputs.cache
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.csproj.CopyComplete
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.dll
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.pdb
-C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\MvcProjeKampi\obj\Debug\MvcProjeKampi.csproj.AssemblyReference.cache

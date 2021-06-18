@@ -15,4 +15,3 @@ C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\En
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\EntityLayer.dll
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\EntityLayer.pdb
-C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\EntityLayer.csproj.AssemblyReference.cache

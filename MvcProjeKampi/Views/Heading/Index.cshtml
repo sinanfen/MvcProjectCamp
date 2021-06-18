@@ -14,7 +14,7 @@
 <body class="hold-transition sidebar-mini">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <div class="container-fluid">    
+        <div class="container-fluid">
         </div><!-- /.container-fluid -->
     </section>
     <!-- Main content -->
@@ -90,75 +90,75 @@
                             {
                                 color = "badge badge-dark";
                             }
-                        <tr>
-                            <td>
-                                @item.HeadingID
-                            </td>
-                            <td>
-                                <a class="text-bold">
-                                    @item.HeadingName
-                                </a>
-                                <br />
-                                <small>
-                                    @(((DateTime)item.HeadingDate).ToString("dd-MMM-yyyy"))
-                                </small>
-                            </td>
-                            <td>
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">
-                                        <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
-                                    </li>
-                                </ul>
-                            </td>
-                            <td>
-                                @switch (item.HeadingStatus)
-                                {
-                                    case false:
-                                        <span class="badge badge-danger">Pasif</span>
-                                        break;
-                                    case true:
-                                        <span class="badge badge-success">Aktif</span>
-                                        break;
-                                    default:
-                                        break;
-                                }
+                            <tr>
+                                <td>
+                                    @item.HeadingID
+                                </td>
+                                <td>
+                                    <a class="text-bold">
+                                        @item.HeadingName
+                                    </a>
+                                    <br />
+                                    <small>
+                                        @(((DateTime)item.HeadingDate).ToString("dd-MMM-yyyy"))
+                                    </small>
+                                </td>
+                                <td>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    @switch (item.HeadingStatus)
+                                    {
+                                        case false:
+                                            <span class="badge badge-danger">Pasif</span>
+                                            break;
+                                        case true:
+                                            <span class="badge badge-success">Aktif</span>
+                                            break;
+                                        default:
+                                            break;
+                                    }
 
-                            </td>
-                            <td class="project-state">
-                                <span class="@color">@item.Category.CategoryName</span>
-                            </td>
-                            <td class="project-actions text-right">
-                                <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingID">
-                                    <i class="fas fa-folder">
-                                        İçerikler
-                                    </i>
-                                </a>
-                                <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingID">
-                                    <i class="fas fa-pencil-alt">
-                                        Düzenle
-                                    </i>
-                                </a>
-                                @switch (item.HeadingStatus)
-                                {
-                                    case false:
-                                        <a class="btn btn-success btn-sm" href="/Heading/EnableHeading/@item.HeadingID">
-                                            <i class="fas fa-ambulance">
-                                            </i>
-                                            Aktif Yap
-                                        </a>
-                                        break;
-                                    case true:
-                                        <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Pasif Yap
-                                        </a>
-                                        break;
-                                    default:
-                                        break;
-                                }
-                            </td>
-                        </tr>
+                                </td>
+                                <td class="project-state">
+                                    <span class="@color">@item.Category.CategoryName</span>
+                                </td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingID">
+                                        <i class="fas fa-folder">
+                                            İçerikler
+                                        </i>
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingID">
+                                        <i class="fas fa-pencil-alt">
+                                            Düzenle
+                                        </i>
+                                    </a>
+                                    @switch (item.HeadingStatus)
+                                    {
+                                        case false:
+                                            <a class="btn btn-success btn-sm" href="/Heading/EnableHeading/@item.HeadingID">
+                                                <i class="fas fa-ambulance">
+                                                </i>
+                                                Aktif Yap
+                                            </a>
+                                            break;
+                                        case true:
+                                            <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
+                                                <i class="fas fa-trash">
+                                                </i>
+                                                Pasif Yap
+                                            </a>
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                </td>
+                            </tr>
                         }
                     </tbody>
                 </table>
@@ -170,49 +170,12 @@
 
     <a href="/Heading/AddHeading/" class="btn btn-primary">Yeni Başlık Girişi</a>
     <br />
+    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
 </body>
 </html>
-
-
-@*<h2>Index</h2>
-    <br />
-    <table class="table table-bordered">
-        <tr>
-            <th>ID</th>
-            <th>Başlık</th>
-            <th>Kategori</th>
-        </tr>
-        @foreach(var item in Model)
-        {
-            <tr>
-                <td>@item.HeadingID</td>
-                <td>@item.HeadingName</td>
-                <td>@item.Category.CategoryName</td>
-            </tr>
-        }
-    </table>
-    <br />
-    <a href="/Heading/AddHeading" class="btn btn-info">Yeni başlık Girişi</a>*@
-
-
-@*<h2>Index</h2>
-    <br />
-    <table class="table table-hover table-bordered">
-        <tr>
-            <th>ID</th>
-            <th>Başlık</th>
-            <th>Kategori</th>
-        </tr>
-        @foreach(var item in Model)
-                {
-                    <tr>
-                        <td>@item.HeadingID</td>
-                        <td>@item.HeadingName</td>
-                        <td>@item.Category.CategoryName</td>
-                    </tr>
-                }
-    </table>
-    <br />
-    <a href="/Heading/AddHeading/" class="btn btn-info">Başlık Ekle</a>*@
-
-

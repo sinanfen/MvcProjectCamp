@@ -11,8 +11,8 @@
     <tr>
         <th>#</th>
         <th>Kategori Adı</th>
-        <th>Başlıklar</th>     
-        <th>Eylem</th>     
+        <th>Başlıklar</th>
+        <th>Eylem</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -20,9 +20,18 @@
             <th>@item.CategoryID</th>
             <td>@item.CategoryName</td>
             <td width="10%"><a href="#" class="btn btn-info">Başlıklar</a></td>
-            <td width="20%"><a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a>
-            <a href="/AdminCategory/EditCategory/@item.CategoryID" class="btn btn-warning">Güncelle</a> </td>
+            <td width="20%">
+                <a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a>
+                <a href="/AdminCategory/EditCategory/@item.CategoryID" class="btn btn-warning">Güncelle</a>
+            </td>
         </tr>
     }
 </table>
 <a href="/AdminCategory/AddCategory" class="btn btn-info">Yeni Kategori</a>
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
