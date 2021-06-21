@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,8 @@ namespace MvcProjeKampi.Controllers
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
         WriterManager wm = new WriterManager(new EfWriterDal());
+        HeadingValidator headingValidator = new HeadingValidator();
+
         public ActionResult Index()
         {
             var headingValues = hm.GetList();
@@ -29,8 +33,7 @@ namespace MvcProjeKampi.Controllers
                                                   {
                                                       Text = x.CategoryName,
                                                       Value = x.CategoryID.ToString()
-                                                  }).ToList();
-           
+                                                  }).ToList();           
 
             List<SelectListItem> valueWriter = (from x in wm.GetList()
                                                 select new SelectListItem
@@ -47,8 +50,20 @@ namespace MvcProjeKampi.Controllers
         public ActionResult AddHeading(Heading p)
         {
             p.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            hm.HeadingAdd(p);
-            return RedirectToAction("Index");
+            ValidationResult results = headingValidator.Validate(p);
+            if (results.IsValid)
+            {
+                hm.HeadingAdd(p);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var error in results.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+            }
+            return View();
         }
 
         [HttpGet]
@@ -76,7 +91,7 @@ namespace MvcProjeKampi.Controllers
         {
             var headingValue = hm.GetById(id);
             headingValue.HeadingStatus = false;
-            hm.HeadingDelete(headingValue);
+            hm.HeadingUpdate(headingValue);
             return RedirectToAction("Index");
         }
 
@@ -84,7 +99,7 @@ namespace MvcProjeKampi.Controllers
         {
             var headingValue = hm.GetById(id);
             headingValue.HeadingStatus = true;
-            hm.HeadingDelete(headingValue);
+            hm.HeadingUpdate(headingValue);
             return RedirectToAction("Index");
         }
     }

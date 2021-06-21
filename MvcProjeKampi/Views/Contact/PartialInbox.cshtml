@@ -24,22 +24,29 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/Message/Sendbox" class="nav-link">
+                    <a href="/Message/Sendbox/" class="nav-link">
                         <i class="far fa-envelope"></i> Gönderilen Mesajlar
-                        <span class="badge bg-success float-right">@ViewBag.query1</span>
+                        <span class="badge bg-warning float-right">@ViewBag.query1</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="far fa-file-alt"></i> Taslaklar
+                    <a href="/Message/ReadMessage/" class="nav-link">
+                        <i class="far fa-envelope-open"></i> Okunmuş Mesajlar
+                        <span class="badge bg-success float-right">@ViewBag.readMessage</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-filter"></i> Spam
-                        <span class="badge bg-warning float-right">65</span>
+                    <a href="/Message/UnreadMessage/" class="nav-link">
+                        <i class="far fa-envelope"></i> Okunmamış Mesajlar
+                        <span class="badge bg-info float-right">@ViewBag.unreadMessage</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/Draft/Draft/" class="nav-link">
+                        <i class="far fa-envelope-open"></i> Taslaklar
+                        <span class="badge bg-dark float-right">@ViewBag.draft</span>
+                    </a>
+                </li>          
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="far fa-trash-alt"></i> Çöp Kutusu

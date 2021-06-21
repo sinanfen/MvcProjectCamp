@@ -15,3 +15,16 @@ C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\En
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\EntityLayer.dll
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\obj\Debug\EntityLayer.pdb
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.Helpers.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.Mvc.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.Razor.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.WebPages.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.Helpers.xml
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.Mvc.xml
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.Razor.xml
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.WebPages.xml
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\EntityLayer\bin\Debug\System.Web.WebPages.Razor.xml

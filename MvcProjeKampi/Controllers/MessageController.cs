@@ -17,6 +17,7 @@ namespace MvcProjeKampi.Controllers
         // GET: Message
         MessageManager mm = new MessageManager(new EfMessageDal());
         MessageValidator messageValidator = new MessageValidator();
+        DraftController draftController = new DraftController();
 
         [Authorize]
         public ActionResult Inbox()
@@ -49,26 +50,75 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult NewMessage(Message p)
+        [HttpPost, ValidateInput(false)]
+        public ActionResult NewMessage(Message p, string button)
         {
-
             ValidationResult results = messageValidator.Validate(p);
-            if (results.IsValid)
+            if (button == "draft")
             {
-                p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                mm.MessageAdd(p); //MessageManager
-                return RedirectToAction("Sendbox");
-            }
-            else
-            {
-                foreach (var item in results.Errors)
+                results = messageValidator.Validate(p);
+                if (results.IsValid)
                 {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    Draft draft = new Draft();
+                    draft.ReceiverMail = p.ReceiverMail;
+                    draft.Subject = p.Subject;
+                    draft.DraftContent = p.MessageContent;
+                    draft.DraftDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                    draftController.AddDraft(draft);
+                    return RedirectToAction("Draft", "Draft");
+                }
+                else
+                {
+                    foreach (var item in results.Errors)
+                    {
+                        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    }
+                }
+            }
+
+            else if (button == "save")
+            {
+                results = messageValidator.Validate(p);
+                if (results.IsValid)
+                {
+                    p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                    p.SenderMail = "admin@gmail.com";
+                    mm.MessageAdd(p);
+                    return RedirectToAction("SendBox");
+                }
+                else
+                {
+                    foreach (var item in results.Errors)
+                    {
+                        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    }
                 }
             }
             return View();
+        }
 
+
+        public ActionResult IsRead(int id)
+        {
+            var result = mm.GetById(id);
+            if (result.IsRead == false)
+            {
+                result.IsRead = true;
+            }
+            mm.MessageUpdate(result);
+            return RedirectToAction("ReadMessage");
+        }
+
+        public ActionResult ReadMessage()
+        {
+            var readMessage = mm.GetList().Where(x => x.IsRead == true).ToList();
+            return View(readMessage);
+        }
+
+        public ActionResult UnreadMessage()
+        {
+            var readMessage = mm.GetListUnread();
+            return View(readMessage);
         }
     }
 }

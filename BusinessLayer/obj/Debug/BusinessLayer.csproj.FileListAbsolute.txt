@@ -24,3 +24,14 @@ C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\obj\Debug\
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\System.Web.Mvc.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\System.Web.WebPages.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\System.Web.Razor.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\System.Web.Mvc.xml
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\System.Web.WebPages.xml
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\System.Web.Razor.xml
+C:\Users\sinan\Desktop\Dosyalar\.Projeler\MvcProjeKampi\BusinessLayer\bin\Debug\System.Web.WebPages.Deployment.xml

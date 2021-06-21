@@ -17,11 +17,13 @@ namespace MvcProjeKampi.Controllers
     public class LoginController : Controller
     {
         // GET: Login
+
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Index(Admin p)
         {
@@ -38,14 +40,16 @@ namespace MvcProjeKampi.Controllers
                 Session["AdminUsername"] = adminuserinfo.AdminUsername;
                 return RedirectToAction("Index", "AdminCategory");
             }
-            ViewBag.ErrorMessage = "Kullanıcı Adı veya Şifre Yanlış";
+            ViewBag.ErrorMessage = "Kullanıcı adı veya şifreniz hatalı";
             return View();
         }
+
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Login");
         }
+
         [HttpGet]
         public ActionResult WriterLogin()
         {
@@ -54,16 +58,6 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer p)
         {
-
-            //SHA1 sha1 = new SHA1CryptoServiceProvider();
-            //string password = p.WriterPassword;
-            //string result = Convert.ToBase64String(sha1.ComputeHash(Encoding.UTF8.GetBytes(password)));
-            //p.WriterPassword = result;
-
-            //Context context = new Context();
-            //var writerUserInfo = context.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail &&
-            //  x.WriterPassword == result);
-
             var response = Request["g-recaptcha-response"];
             const string secret = "6LfHFTwbAAAAAB53V5ZcixAgVCi2aTXIuF-eLxF9";
             var client = new WebClient();
@@ -72,19 +66,9 @@ namespace MvcProjeKampi.Controllers
             var captchaResponse = JsonConvert.DeserializeObject<CaptchaResponse>(reply);
             if (!captchaResponse.Success)
             {
-                ViewBag.ErrorMessage = "Kullanıcı Adı veya Şifreniz Yanlış!";
+                ViewBag.ErrorMessage = "Kullanıcı adı veya şifreniz hatalı";
                 return View();
             }
-
-            //if (writerUserInfo != null)
-            //{
-            //    FormsAuthentication.SetAuthCookie(writerUserInfo.WriterMail, false);
-            //    Session["WriterMail"] = writerUserInfo.WriterMail;
-            //    return RedirectToAction("MyContent", "WriterPanelContent");
-            //}
-
-            //ViewBag.ErrorMessage = "Kullanıcı Adı veya Şifreniz Yanlış!";
-            //return View();
 
 
             Context c = new Context();
@@ -100,11 +84,14 @@ namespace MvcProjeKampi.Controllers
                 return RedirectToAction("WriterLogin");
             }
         }
+
         public ActionResult WriterLogOut()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("WriterLogin", "Login");
+            Session.Abandon();
+            return RedirectToAction("Headings", "Default");
         }
+
         public class CaptchaResponse
         {
             [JsonProperty("success")]

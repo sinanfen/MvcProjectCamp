@@ -15,6 +15,8 @@ namespace MvcProjeKampi.Controllers
         // GET: Contact
         ContactManager cm = new ContactManager(new EfContactDal());
         ContactValidator cv = new ContactValidator();
+        MessageManager mm = new MessageManager(new EfMessageDal());
+        DraftManager dm = new DraftManager(new EfDraftDal());
         Context _context = new Context();
         public ActionResult Index()
         {
@@ -36,6 +38,12 @@ namespace MvcProjeKampi.Controllers
             ViewBag.query2 = value2;
             var value3 = _context.Contacts.Count().ToString();
             ViewBag.query3 = value3;
+            var readMessage = mm.GetList().Count();
+            ViewBag.readMessage = readMessage;
+            var unreadMessage = mm.GetListUnread().Count();
+            ViewBag.unreadMessage = unreadMessage;
+            var draft = _context.Drafts.Count().ToString();
+            ViewBag.draft = draft;
             return PartialView();
         }
     }
