@@ -1,0 +1,74 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{ 
+    string color = "";
+}
+
+<div>
+    <div class="row">
+        <div class="col" style="margin-top:15px; margin-bottom:5px;">
+            <h2>Hakkımızda Veri Listesi</h2>
+        </div>      
+    </div>
+</div>
+
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Hakkımda Başlığı</th>
+        <th>Durum</th>
+        <th>Eylem</th>
+       
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AboutID</td>
+            <td>@item.AboutDetails1</td>
+            <td>
+                @switch (item.AboutStatus)
+                {
+                    case false:
+                        <span class="badge badge-danger">Pasif</span>
+                        break;
+                    case true:
+                        <span class="badge badge-success">Aktif</span>
+                        break;
+                    default:
+                        break;
+                }
+            </td>  
+            <td>
+                @switch (item.AboutStatus)
+                {
+                    case false:
+                        <a class="btn btn-success btn-sm" href="/About/EnableAbout/@item.AboutID">
+                            <i class="fas fa-ambulance">
+                            </i>
+                            Aktif Yap
+                        </a>
+                        break;
+                    case true:
+                        <a class="btn btn-danger btn-sm" href="/About/DisableAbout/@item.AboutID">
+                            <i class="fas fa-trash">
+                            </i>
+                            Pasif Yap
+                        </a>
+                        break;
+                    default:
+                        break;
+                }
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.Action("AboutPartial", "About")
+<script src="~/AdminLTE-3.0.4/docs/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+<script src="~/AdminLTE-3.0.4/docs/assets/plugins/jquery/jquery.min.js"></script>

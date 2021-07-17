@@ -17,9 +17,13 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.WriterName).MaximumLength(20).WithMessage("Lütfen en fazla 50 karakter girişi yapın.");
             RuleFor(x => x.WriterSurname).NotEmpty().WithMessage("Yazar soy adını boş geçemezsiniz.");
             RuleFor(x => x.WriterSurname).MaximumLength(20).WithMessage("Lütfen en fazla 50 karakter girişi yapın.");
+            RuleFor(x => x.WriterNickname).NotEmpty().WithMessage("Yazar kullanıcı adını boş geçemezsiniz.");
+            RuleFor(x => x.WriterNickname).MinimumLength(5).WithMessage("Kullanıcı adınız en az 5 karakter olmalıdır.");
+            RuleFor(x => x.WriterNickname).MaximumLength(100).WithMessage("Kullanıcı adınız en fazla 100 karakter olmalıdır.");
             RuleFor(x => x.WriterTitle).NotEmpty().WithMessage("Yazar ünvanını boş geçemezsiniz.");
             RuleFor(x => x.WriterAbout).NotEmpty().WithMessage("Hakkında alanını boş geçemezsiniz.");
             RuleFor(x => x.WriterAbout).MinimumLength(50).WithMessage("Lütfen hakkınızda en az 50 karakter girişi yapın.");
+            RuleFor(x => x.WriterAbout).MaximumLength(100).WithMessage("Lütfen hakkınızda en fazla 100 karakter girişi yapın.");
             RuleFor(x => x.WriterAbout).Must(x => x != null && x.ToLower().Contains("a")).WithMessage("Hakkında kısmında en az bir a harfi içermelidir");       
             RuleFor(x => x.WriterPassword).MinimumLength(6).WithMessage("Şifreniz en az 6 karakterden oluşmalıdır.");
         }

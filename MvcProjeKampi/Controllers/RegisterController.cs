@@ -31,6 +31,7 @@ namespace MvcProjeKampi.Controllers
             string result = Convert.ToBase64String(sha1.ComputeHash(Encoding.UTF8.GetBytes(passwrod)));
             admin.AdminPassword = result;
             admin.AdminRole = "A";
+            admin.RoleId = 1;
             adminManager.AdminAdd(admin);
             return RedirectToAction("Index","Login");
         }

@@ -9,6 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
+using System.IO;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -18,18 +21,53 @@ namespace MvcProjeKampi.Controllers
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
         HeadingValidator headingValidator = new HeadingValidator();
+        WriterValidator writerValidator = new WriterValidator();
+        WriterManager writerManager = new WriterManager(new EfWriterDal());
         Context c = new Context();
-    
-        public ActionResult WriterProfile()
+
+        [HttpGet]
+        public ActionResult WriterProfile(int id = 0)
         {
+            string p = (string)Session["WriterMail"];        
+            id = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
+            var writerValue = writerManager.GetById(id);                 
+            return View(writerValue);
+        }
+
+        [HttpPost]
+        public ActionResult WriterProfile(Writer p)
+        {
+            ValidationResult results = writerValidator.Validate(p);
+            if (Request.Files.Count > 0 || results.IsValid)
+            {  
+                //Bu kısım writer image güncellemek için
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/avatar/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.WriterImage = "/avatar/" + dosyaAdi + uzanti;
+              
+
+                p.WriterStatus = true;
+                p.WriterRole = "A";
+                writerManager.WriterUpdate(p);
+                return RedirectToAction("AllHeadings", "WriterPanel");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
             return View();
         }
 
         public ActionResult MyHeading(string p)
         {
-          
+
             p = (string)Session["WriterMail"];
-            var writerIdInfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();          
+            var writerIdInfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
             var values = hm.GetListByWriter(writerIdInfo);
             return View(values);
         }
@@ -37,7 +75,7 @@ namespace MvcProjeKampi.Controllers
         [HttpGet]
         public ActionResult NewHeading()
         {
-           
+
             List<SelectListItem> valueCategory = (from x in cm.GetList()
                                                   select new SelectListItem
                                                   {
@@ -70,7 +108,7 @@ namespace MvcProjeKampi.Controllers
                 }
             }
             return View();
-        
+
         }
 
         [HttpGet]
@@ -101,5 +139,13 @@ namespace MvcProjeKampi.Controllers
             hm.HeadingDelete(headingValue);
             return RedirectToAction("MyHeading");
         }
+
+        public ActionResult AllHeadings(int p = 1)
+        {
+            var headings = hm.GetList().ToPagedList(p,10);
+            return View(headings);
+        }
+
+
     }
 }

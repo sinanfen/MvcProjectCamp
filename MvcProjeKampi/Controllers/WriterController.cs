@@ -3,8 +3,10 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using PagedList;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,11 +17,12 @@ namespace MvcProjeKampi.Controllers
     {
         // GET: Writer
 
-        WriterManager wm = new WriterManager(new EfWriterDal());
+        WriterManager writerManager = new WriterManager(new EfWriterDal());
         WriterValidator writerValidator = new WriterValidator();
-        public ActionResult Index()
+    
+        public ActionResult Index(int p = 1)
         {
-            var WriterValues = wm.GetList();
+            var WriterValues = writerManager.GetList().ToPagedList(p,9);
             return View(WriterValues);
         }
 
@@ -35,7 +38,7 @@ namespace MvcProjeKampi.Controllers
             ValidationResult results = writerValidator.Validate(p);
             if (results.IsValid)
             {
-                wm.WriterAdd(p); //WriterManager
+                writerManager.WriterAdd(p); //WriterManager
                 return RedirectToAction("Index");
             }
             else
@@ -51,7 +54,8 @@ namespace MvcProjeKampi.Controllers
         [HttpGet]
         public ActionResult EditWriter(int id)
         {
-            var writerValue = wm.GetById(id);
+           
+            var writerValue = writerManager.GetById(id);
             return View(writerValue);
         }
 
@@ -59,9 +63,18 @@ namespace MvcProjeKampi.Controllers
         public ActionResult EditWriter(Writer p)
         {
             ValidationResult results = writerValidator.Validate(p);
-            if (results.IsValid)
+            if (Request.Files.Count > 0 || results.IsValid)
             {
-                wm.WriterUpdate(p);
+                //Bu kısım writer image güncellemek için
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/avatar/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.WriterImage = "/avatar/" + dosyaAdi + uzanti;
+
+                p.WriterStatus = true;
+                p.WriterRole = "A";
+                writerManager.WriterUpdate(p);
                 return RedirectToAction("Index");
             }
             else

@@ -15,32 +15,34 @@ namespace MvcProjeKampi.Controllers
     public class MessageController : Controller
     {
         // GET: Message
-        MessageManager mm = new MessageManager(new EfMessageDal());
+        MessageManager messageManager = new MessageManager(new EfMessageDal());
         MessageValidator messageValidator = new MessageValidator();
         DraftController draftController = new DraftController();
 
         [Authorize]
         public ActionResult Inbox()
         {
-            var messageInboxList = mm.GetListInbox();
-            return View(messageInboxList);
+            string p = (string)Session["WriterMail"];
+            var messagelist = messageManager.GetListInbox(p);
+            return View(messagelist);
         }
 
         public ActionResult Sendbox()
         {
-            var messageSendboxList = mm.GetListSendbox();
-            return View(messageSendboxList);
+            string p = (string)Session["WriterMail"];
+            var messagelist = messageManager.GetListSendbox(p);
+            return View(messagelist);
         }
 
         public ActionResult GetInboxMessageDetails(int id)
         {
-            var values = mm.GetById(id);
+            var values = messageManager.GetById(id);
             return View(values);
         }
 
         public ActionResult GetSendboxMessageDetails(int id)
         {
-            var values = mm.GetById(id);
+            var values = messageManager.GetById(id);
             return View(values);
         }
 
@@ -83,7 +85,7 @@ namespace MvcProjeKampi.Controllers
                 {
                     p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                     p.SenderMail = "admin@gmail.com";
-                    mm.MessageAdd(p);
+                    messageManager.MessageAdd(p);
                     return RedirectToAction("SendBox");
                 }
                 else
@@ -100,24 +102,24 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult IsRead(int id)
         {
-            var result = mm.GetById(id);
+            var result = messageManager.GetById(id);
             if (result.IsRead == false)
             {
                 result.IsRead = true;
             }
-            mm.MessageUpdate(result);
+            messageManager.MessageUpdate(result);
             return RedirectToAction("ReadMessage");
         }
 
         public ActionResult ReadMessage()
         {
-            var readMessage = mm.GetList().Where(x => x.IsRead == true).ToList();
+            var readMessage = messageManager.GetList().Where(x => x.IsRead == true).ToList();
             return View(readMessage);
         }
 
         public ActionResult UnreadMessage()
         {
-            var readMessage = mm.GetListUnread();
+            var readMessage = messageManager.GetListUnread();
             return View(readMessage);
         }
     }

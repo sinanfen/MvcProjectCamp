@@ -3,6 +3,7 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,13 @@ namespace MvcProjeKampi.Controllers
         WriterManager wm = new WriterManager(new EfWriterDal());
         HeadingValidator headingValidator = new HeadingValidator();
 
-        public ActionResult Index()
+        public ActionResult Index(int p = 1)
+        {
+            var headingValues = hm.GetList().ToPagedList(p,10);
+            return View(headingValues);
+        }
+
+        public ActionResult HeadingReport()
         {
             var headingValues = hm.GetList();
             return View(headingValues);

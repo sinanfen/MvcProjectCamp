@@ -1,4 +1,6 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Newtonsoft.Json;
 using System;
@@ -17,6 +19,7 @@ namespace MvcProjeKampi.Controllers
     public class LoginController : Controller
     {
         // GET: Login
+        WriterLoginManager writerLoginManager = new WriterLoginManager(new EfWriterDal());
 
         [HttpGet]
         public ActionResult Index()
@@ -47,7 +50,8 @@ namespace MvcProjeKampi.Controllers
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Login");
+            Session.Abandon();
+            return RedirectToAction("Headings", "Default");
         }
 
         [HttpGet]
@@ -58,8 +62,8 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer p)
         {
-            var response = Request["g-recaptcha-response"];
-            const string secret = "6LfHFTwbAAAAAB53V5ZcixAgVCi2aTXIuF-eLxF9";
+            var response = Request["g-recaptcha-response"]; 
+            const string secret = "6Lfn_JMbAAAAAH-go1b0RkpgOlmpLYdyhBTSEEKo";
             var client = new WebClient();
 
             var reply = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
@@ -70,13 +74,13 @@ namespace MvcProjeKampi.Controllers
                 return View();
             }
 
-
-            Context c = new Context();
-            var writeruserinfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
-            if (writeruserinfo != null)
+            //Context c = new Context();
+            //var writerUserInfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
+            var writerUserInfo = writerLoginManager.GetWriter(p.WriterMail, p.WriterPassword);
+            if (writerUserInfo != null)
             {
-                FormsAuthentication.SetAuthCookie(writeruserinfo.WriterMail, false);
-                Session["WriterMail"] = writeruserinfo.WriterMail;
+                FormsAuthentication.SetAuthCookie(writerUserInfo.WriterMail, false);
+                Session["WriterMail"] = writerUserInfo.WriterMail;
                 return RedirectToAction("MyContent", "WriterPanelContent");
             }
             else

@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+
+<h2>İstatistikler</h2>
+
+<html>
+
+<body>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="small-box bg-gradient-indigo">
+                <div class="inner" style="text-align: center">
+                    <br />
+                    <h3><sup style="font-size: 50px">@ViewBag.totalCategoryNum</sup></h3>
+                    <sup style="font-size: 20px">Toplam Kategori Sayısı</sup>
+                </div>  <a href="#" class="small-box-footer"></a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="small-box bg-cyan">
+                <div class="inner" style="text-align: center">
+                    <br />
+                    <h3><sup style="font-size: 50px">@ViewBag.softwareCategoryTitleNum</sup></h3>
+                    <sup style="font-size: 20px">Yazılım Kategorisi Başlık Sayısı</sup>
+                </div><a href="#" class="small-box-footer"></a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="small-box bg-gradient-orange">
+                <div class="inner" style="text-align: center">
+                    <br />
+                    <h3><sup style="font-size: 50px">@ViewBag.maxHeadingsOfCategories</sup></h3>
+                    <sup style="font-size: 20px">En fazla başlığa sahip kategori adı</sup>
+                </div><a href="#" class="small-box-footer"></a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="small-box bg-warning">
+                <div class="inner" style="text-align: center">
+                    <br />
+                    <h3><sup style="font-size: 40px">@ViewBag.activeCategories</sup></h3>
+                    <sup style="font-size: 20px">Aktif Kategori Sayısı</sup>
+                </div> <a href="#" class="small-box-footer"></a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="small-box bg-secondary">
+                <div class="inner" style="text-align: center">
+                    <br />
+                    <h3><sup style="font-size: 50px">@ViewBag.writerNameIncludesByS</sup></h3>
+                    <sup style="font-size: 20px">Yazar isminde "S" harfi içeren sayısı</sup>
+                </div><a href="#" class="small-box-footer"></a>
+            </div>
+        </div>
+    </div>
+    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+</body>
+</html>

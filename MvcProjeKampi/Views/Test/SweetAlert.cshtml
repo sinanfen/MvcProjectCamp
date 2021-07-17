@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "SweetAlert";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+
+<button class="btn btn-primary" id="btn1">Buton 1</button>
+<button class="btn btn-dark" id="btn2">Buton 2</button>
+<button class="btn btn-success" id="btn3">Buton 3</button>
+<button class="btn btn-danger" id="btn4">Buton 4</button>
+<button class="btn btn-warning" id="btn5">Buton 5</button>
+<button class="btn btn-info" id="btn6">Buton 6</button>
+<button class="btn btn-primary" id="btn7">Buton 7</button>
+<button class="btn btn-primary" id="btn8">Buton 8</button>
+
+<script>
+    $('#btn1').click(function () {
+        swal("Merhaba");
+    })
+</script>
+
+<script>
+    $('#btn2').click(function () {
+        swal("Merhaba","Deneme yazısı");
+    })
+</script>
+
+<script>
+    $('#btn3').click(function () {
+        swal("Başarılı", "Kategori eklendi", "success");
+    })
+</script>
+
+<script>
+    $('#btn4').click(function () {
+        swal("Merhaba", "Deneme yazısı", "error");
+    })
+</script>
+
+<script>
+    $('#btn5').click(function () {
+        swal("Merhaba", "Deneme yazısı", "warning");
+    })
+</script>
+
+<script>
+    $('#btn6').click(function () {
+        swal("Merhaba", "Deneme yazısı", "info");
+    })
+</script>
+
+<script>
+    $('#btn7').click(function () {
+        swal({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success",
+        });
+    })
+</script>
+
+<script>
+    $('#btn8').click(function () {
+        swal({
+            title: 'Başarılı',
+            text: 'Kategori eklendi...',
+            icon: 'success',
+            timer: 2000,
+            buttons: false,
+        })
+            .then(() => {
+                dispatch(redirect('/'));
+            })
+    })
+</script>

@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+@{
+    ViewBag.Title = "GetAllContent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using (Html.BeginForm("GetAllContent", "Content", FormMethod.Post))
+{
+    <p>
+        Aranacak kelimeyi girin: @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<div class="row">
+    <div class="col-md-12">
+        <!-- The time line -->
+        <div class="timeline">
+            @foreach (var item in Model)
+            {
+                <div>
+                    <i class="fas fa-comment bg-yellow"></i>
+                    <div class="timeline-item">
+                        <h3 class="timeline-header"><a href="/Default/Headings/@item.HeadingID/">@item.Heading.HeadingName</a></h3>
+                        <div class="timeline-body">
+                            @item.ContentValue
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+

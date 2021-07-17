@@ -1,0 +1,64 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+
+                <!-- Timelime example  -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- The time line -->
+                        <div class="timeline">
+                            <!-- timeline time label -->
+                            @foreach (var item in Model)
+                            {
+
+                                <div class="time-label mt-4">
+                                    <span class="bg-success">@(((DateTime)item.ContentDate).ToString("dd-MMM-yyyy")) - @item.Writer.WriterName @item.Writer.WriterSurname (@item.Writer.WriterNickname)</span>
+                                </div>
+                                <!-- /.timeline-label -->
+                                <!-- timeline item -->
+                                <div>
+                                    <i class="fas fa-comment bg-yellow"></i>
+                                    <div class="timeline-item">
+                                        <h3 class="timeline-header"><a href="#">@item.Heading.HeadingName</a></h3>
+                                        <div class="timeline-body">
+                                            @item.ContentValue
+                                        </div>
+                                        <a class="btn btn-light btn-sm" href="/WriterPanelContent/AddContent/@item.HeadingID">
+                                            <i class="fas fa-pencil-alt">
+                                                Bu başlığa yaz
+                                            </i>
+                                        </a>
+                                    </div>
+                                </div>
+                               
+                                <!-- END timeline item -->
+                            }
+
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+            <!-- /.timeline -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- ./wrapper -->
+    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+</body>
+</html>
+
