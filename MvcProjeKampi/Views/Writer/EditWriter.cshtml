@@ -32,11 +32,11 @@
         @Html.ValidationMessageFor(x => x.WriterPassword, "", new { @class = "text-danger" })
         <br />
         @Html.Label("Yazar Görsel")
-        <input type="file" name="WriterImage" class="form-check"/>
+        <input type="file" name="WriterImage" required class="form-check"/>
         @Html.ValidationMessageFor(x => x.WriterImage, "", new { @class = "text-danger" })
         <br />
         @Html.Label("Yazar Ünvanı")
-        @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" , @required = "required" })
         @Html.ValidationMessageFor(x => x.WriterTitle, "", new { @class = "text-danger" })
         <br />
         @Html.Label("Yazar Hakkında")
